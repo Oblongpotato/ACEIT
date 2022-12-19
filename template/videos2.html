@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Videos Page
+        </title>
+        <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif
+}
+
+body {
+    background-color: #000;
+    min-height: 80vh;
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+
+header .sticky {
+    padding: 5px 100px;
+    background: #fff;
+
+}
+
+header .logo {
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    margin: 0px 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../static/background.jpg);
+    background-size: cover;
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+    color: #000;
+}
+
+
+/*--------------------for textbox------------------------------*/
+
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.text-box h1 {
+    font-size: 65px;
+}
+
+.text-box p {
+    margin: 10px 0px 30px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: 1px solid #552f9ccc;
+    background: #552f9ccc;
+    transition: 0.5s;
+}
+
+nav .fa {
+    display: none;
+}
+
+@media(max-width:700px) {
+    .text-box h1 {
+        font-size: 20px;
+    }
+
+    .nav-links ul li {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: #552f9ccc;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 0.3s;
+    }
+
+    nav .fa {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        padding: 30px;
+    }
+}
+
+
+/*---------------------company slider------------------------------*/
+
+.sliderrr{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    background: #0e0c1aec;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))
+  }
+  
+  h1{
+    font-size: 36px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+  }
+  .slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 1s;
+  }
+  
+  .slide img{
+    width: 800px;
+    height: 500px;
+  }
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background: #40D3DC;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  /* #radio4:checked ~ .first{
+    margin-left: -60%;
+  } */
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+  .navigation-auto div{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #40D3DC;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #40D3DC;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #40D3DC;
+  }
+  
+  /* #radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #40D3DC;
+  } */
+
+
+  /*---------------------Resources------------------------------*/
+
+.resources {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../static/bookstore.jfif);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+    
+    h2{
+        color: rgb(80, 80, 80);
+        font-weight: 300;
+    }
+    
+    
+    h1{
+        font-size: 36px;
+        font-weight: 600;
+    }
+
+
+    h3{
+        color: black;
+        text-align: center;
+        font-weight: 600;
+        margin: 10px 0;
+        
+    }
+    
+    h4{
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-weight: 100;
+        padding-bottom: 20px;
+        margin: 10px 0;
+    }
+    
+    
+    p{
+        color: rgb(197, 197, 197);
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 12px;
+        padding-bottom: 1px;
+        
+    }
+    
+    .row1{
+        margin-top: 2%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .row2{
+        margin-top: 0%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 50px;
+    }
+    
+    .r-column{
+        flex-basis: 35%;
+        background-color: #ffffff;
+        border-radius: 10px;
+        margin-bottom: 2%;
+        padding: 30px 12px;
+        box-sizing: border-box;
+        transition: 0.2s;
+    }
+
+
+    .r-column:hover{
+        box-shadow: 0 0 20px 0 rgba(255, 254, 254, 0.2);
+        transform: scale(1.01);
+    }
+    
+
+
+    @media(max-width: 700px){
+        .row1{
+            flex-direction: column;
+        }
+        .row2{
+            flex-direction: column;
+        }
+    }
+
+
+    /*---------------------blogs  page------------------------------*/
+
+.blogs {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../static/bookstore.jfif);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 8%;
+}
+    
+    h2{
+        color: rgb(228, 228, 228);
+        font-weight: 300;
+    }
+    
+    
+    h1{
+        font-size: 36px;
+        font-weight: 600;
+        color: #fff;
+    }
+    
+    
+    p{
+        color: #777;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        padding: 10px;
+    }
+    
+    .row1{
+        margin-top: 2%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+
+    
+
+
+    /*---------------------contact us------------------------------*/
+
+.contactus{
+    background-color: #0e0c1aec;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))
+
+}
+    .location{
+        width: 80%;
+        margin: auto;
+        padding: 80px 0;
+    
+    }
+    
+    
+    .location h2{
+        text-align: center;
+    }
+    
+    
+    .location h1{
+        text-align: center;
+    }
+    
+    .location iframe{
+        padding-top: 40px;
+        width: 100%;
+    }
+    
+    
+    .contact-us{
+        width: 80%;
+        margin: auto;
+    
+    }
+    
+    
+    .row{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    
+    .contact-col{
+        flex-basis: 48%;
+        margin-bottom: 30px;
+    }
+    
+    .contact-col div{
+        display: flex;
+        align-items: center;
+        margin-block: 40px;
+    }
+    
+    .contact-col div .fa{
+        font-size: 28px;
+        color: #552f9ccc;
+        margin: 10px;
+        margin-right: 30px;
+    }
+    
+    .contact-col div p{
+        padding: 0;
+    }
+    
+    .contact-col div h5{
+        font-size: 20px;
+        margin-bottom: 5px;
+        color: rgb(150, 149, 149);
+        font-weight: 400;
+    }
+    
+    .contact-col input, .contact-col textarea{
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 17px;
+        outline: none;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    
+    .purp-btn{
+        border: 1px solid #552f9ccc;
+        background: transparent;
+        color: #552f9ccc;
+    }
+    
+    .purp-btn:hover{
+        color: #fff;
+    }
+
+    /*---------------------footer------------------------------*/
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    
+}
+    
+    .footer h4{
+        margin-top: 20px;
+        margin-bottom: 25px;
+        font-weight: 600;
+        color: black;
+    }
+    .footer p{
+        font-weight: 50;
+        font-size: small;
+    }
+    .icons .fa{
+        color: #552f9ccc;
+        margin: 0 13px;
+        cursor: pointer;
+        padding: 20px 0;
+    }
+
+
+    .footer-row1{
+        margin-top: 2%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .footer-row2{
+        margin-top: 0%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 50px;
+    }
+        
+    .footer-col{
+        flex-basis: 48%;
+        margin-bottom: 30px;
+    }
+    /*---------------------notes page-----------------------------*/
+
+
+.notes{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 24px;
+    background: url(../static/background.jpg);
+}
+
+    .dark__theme{
+        width: 100%;
+        background-color: #0e0c1aec;
+        z-index: 1;
+        
+        position: relative;
+        /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7))  */
+    }
+
+    .row{
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    /* .notes-col{
+        flex-basis: 31%;
+        background: #fff3f3;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        text-align: center;
+        font-size: 14px;
+        padding: 20px 12px;
+        
+    } */
+
+    .notes-col{
+        flex-basis: 35%;
+        background-color: rgb(158, 150, 165);
+        border-radius: 10px;
+        margin-bottom: 2%;
+        padding: 30px 12px;
+        box-sizing: border-box;
+        transition: 0.2s;
+        height: 200px;
+        width: 600px;
+    }
+
+    h3{
+        color: black;
+        text-align: center;
+        font-weight: 600;
+        margin: 10px 0;
+        
+    }
+
+    h1{
+        font-size: 36px;
+        font-weight: 600;
+        color: white;
+        padding-bottom: 40px;
+    }
+
+    p{
+        color: rgb(117, 108, 108);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 14px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        
+    }
+
+
+    
+
+
+    .notes-col:hover{
+        box-shadow: 0 0 20px 0 rgba(255, 254, 254, 0.2);
+        transform: scale(1.01);
+    }
+
+
+
+
+
+        </style>
+        <link rel="stylesheet" href="mainstyle.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,100&display=swap" rel="stylesheet">
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>    
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light" style="position: fixed; z-index: 100; width: 100%;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="http://localhost:8000/login/index/" style="font-weight: 600;">ACEit</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll" style="padding-left: 350px;">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="http://localhost:8000/login/index/">HOME</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#resources" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                RESOURCES</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="http://localhost:8000/login/guide/">INTERVIEW GUIDE</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/login/notes2/">NOTES</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/login/videos2/">VIDEOS</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="http://localhost:8000/login/blogs2page/">BLOGS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost:8000/login/index/#contactus">CONTACT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost:8000/login/index/#aboutus">ABOUT US</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <!-- <form class="d-flex" role="search" style="padding-right: 20px;"> -->
+                    <!-- <a href="profile.html" style="padding-right: 20px;">
+                        <button class="hero-btn purp-btn" href="profile.html">Profile</button>
+                    </a> -->
+                <!-- </form> -->
+                <!-- <form class="d-flex" role="search"> -->
+                    <a href="http://localhost:8000/">
+                        <button class="hero-btn purp-btn" href="http://localhost:8000/">Sign Out</button>
+                    </a>
+                <!-- </form> -->
+    
+            </div>
+        </nav>
+
+
+
+        <section class="notes" style="background-image:url(/static/background.jpg) ;">
+            <br>
+            <h1 style="color: white;">Videos</h1>
+            <br>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                      <div class="card" onclick="window.location.href = 'https://www.youtube.com/watch?v=7UlslIXHNsw';">
+                        <img src="/static/foryt1.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">How to prepare for technical interviews?</h5>
+                        </div>
+                      </div>
+                    </a>
+                    </div>
+                    <div class="col">
+                      <div class="card" onclick="window.location.href = 'https://youtu.be/OLVUrgQ_BbA';">
+                        <img src="/static/foryt3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">How to Introduce Yourself in Interviews?</h5>
+                        </div>
+                      </div>
+                    </a>
+                    </div>
+                    <div class="col">
+                      <div class="card"  onclick="window.location.href = 'https://www.indeed.com/career-advice/interviewing/technical-interview-preparation';">
+                        <img src="/static/foryt2.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Acing Technical Interviews</h5>
+                        </div>
+                      </div>
+                    </a>
+                    </div>
+                    <div class="col">
+                      <div class="card">
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <br>
+                          <h5 class="card-title">More Videos Soon..</h5>
+                          <br>
+                          <!-- <p class="card-text"></p> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <br>
+        </section>
+        
+
+        <!---------------------footer------------------------------>
+
+
+        <section class="footer" id="aboutus" style="background-color: white;">
+            <h4>About Us</h4>
+            <p>ACEit is a platform created to help students prepare for interviews for technical jobs. We help you polish your skills and get ready for the job, whether you are a fresh college graduate or a working professional.
+
+                We provide study resources required to prepare for aptitude tests and the interview process. We provide an interview guide which specifies requirements of various companies and helps you prepare in the right way to ACE your interviews and land your dream jobs.
+            </p>
+            <div class="icons">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </div>
+        </section>
+    </body>
+
+</html>
+                <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+        
+                <!-----------------------------js for black box------------------->
+                <!--<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+        
+                <script>
+                    $(window).scroll(function(){
+                        if($(window).scrollTop()){
+                            $("nav").addClass("blackbox");
+                        }
+                        else{
+                            $("nav").removeClass("blackbox");
+                        }
+                    });
+                </script>-->
+        
+                
+    
